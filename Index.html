@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Armas Despertadas - Albion Online</title>
+<link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Calculadora de Armas Despertadas</h1>
+             <h2>Awakened Weapons Calculator</h2>
+             <p>Made by Zugorosh</p>
+             <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="Zugorosh" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+            
+        </div>
+
+
+    </header>
+    
+    <div class="container">
+        <div class="calculator">
+            <form id="weaponForm">
+                <div class="form-group">
+                    <label for="tier">Tier del Arma</label>
+                    <select id="tier" required>
+                        <option value="4">Tier 4</option>
+                        <option value="5">Tier 5</option>
+                        <option value="6">Tier 6</option>
+                        <option value="7">Tier 7</option>
+                        <option value="8">Tier 8</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="baseValue">Valor Base del Arma (Base Est Value)</label>
+                    <input type="number" id="baseValue" placeholder="Ej: 1000000" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="strain">Tensión (Strain)</label>
+                    <input type="number" id="strain" step="0.01" placeholder="Ej: 35.5" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="attunementBonus">Bono de Armonización (Attunement Bonus)</label>
+                    <input type="number" id="attunementBonus" step="0.01" placeholder="Ej: 5.32" required>
+                </div>
+                
+                <div class="multiplier-box">
+                    <div class="multiplier-card">
+                        <label>Tu Multiplicador (Your Multiplier)</label>
+                        <input type="text" id="strainMultiplier" class="multiplier-input" readonly value="0.00">
+                        <small>(Strain / Bonus)</small>
+                    </div>
+                    
+                    <div class="multiplier-card community-card">
+                        <label for="communityMultiplier">Mult. Comunidad (Community Multiplier)</label>
+                        <input type="number" id="communityMultiplier" class="multiplier-input" value="30" step="0.1">
+                        <small>(Ajustable)</small>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="harmonySpent">Armonización Gastada (Max Attunement Points)</label>
+                    <input type="number" id="harmonySpent" placeholder="Ej: 205205" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="silverCost">Costo de Plata (Silver Cost)</label>
+                    <input type="number" id="silverCost" placeholder="Ej: 124534" required>
+                </div>
+                
+                <div class="tier-info">
+                    <div class="energy-box">
+                        <h3>Energías Requeridas</h3>
+                        <p>Energia embotellada: <span class="energy-required" id="siphonedQty">3</span> unidades</p>
+                        <label for="siphonedPrice">Precio por unidad</label>
+                        <input type="number" id="siphonedPrice" placeholder="Ej: 9115" required>
+                    </div>
+                    
+                    <div class="energy-box">
+                        <h3>Energías Requeridas</h3>
+                        <p>Energia Avaloniana: <span class="energy-required" id="avalonQty">3</span> unidades</p>
+                        <label for="avalonPrice">Precio por unidad</label>
+                        <input type="number" id="avalonPrice" placeholder="Ej: 3324" required>
+                    </div>
+                </div>
+              <div style="margin-top: 20px;"></div>
+                <button type="submit">Calcular Valores</button>
+            </form>
+            
+            <div class="result" id="result">
+                <h2>Comparación de Valores</h2>
+                
+                <div class="comparison">
+                    <div class="comparison-card">
+                        <h3>Valor Real</h3>
+                        <div class="result-value real-value" id="realValue">0</div>
+                        <p>Silver</p>
+                        <small>(Usando tu multiplicador)</small>
+                    </div>
+                    
+                    <div class="comparison-card">
+                        <h3>Valor Comunidad</h3>
+                        <div class="result-value community-value" id="communityValue">0</div>
+                        <p>Silver</p>
+                        <small>(Usando ×<span id="usedCommunityMultiplier">30</span>)</small>
+                    </div>
+                </div>
+                
+                <div id="difference" style="margin-top: 1rem; font-weight: 600;"></div>
+            </div>
+        </div>
+    </div>
+<script src="JS/scripts.js"></script>
+</body>
+</html>
