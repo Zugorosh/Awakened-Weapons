@@ -26,10 +26,10 @@
             
             // Evaluar calidad del arma
             const qualityIndicator = document.getElementById('qualityIndicator');
-            if (multiplier > 35) {
+            if (multiplier > 30) {
                 qualityIndicator.textContent = "⚠️ Mala calidad (Strain muy alto)";
                 qualityIndicator.className = "quality-indicator quality-bad";
-            } else if (multiplier > 25) {
+            } else if (multiplier > 20) {
                 qualityIndicator.textContent = "⚠️ Calidad regular";
                 qualityIndicator.className = "quality-indicator quality-warning";
             } else {
@@ -65,4 +65,5 @@
         });
 
         // Inicializar
+
         updateMultiplier();
